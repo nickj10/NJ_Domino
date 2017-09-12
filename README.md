@@ -8,16 +8,16 @@ gestión de memoria. Es un juego de 2 a 4 jugadores.
 
 Funcionalidades
 
-> Para ejecutar el juego, hay que pasar 2 paramteros: ranking.bin y jugadors.txt
-> El menu principal tiene 3 opciones, 1 para empezar nueva partida, 2 para mostrar el ranking de los jugadores y 3 para salir del juego
-> En total hay 28 fichas. Una ficha [5|1] puede considerar como  [1|5]
+- Para ejecutar el juego, hay que pasar 2 paramteros: ranking.bin y jugadors.txt
+- El menu principal tiene 3 opciones, 1 para empezar nueva partida, 2 para mostrar el ranking de los jugadores y 3 para salir del juego
+- En total hay 28 fichas. Una ficha [5|1] puede considerar como  [1|5]
   No hay fichas repetidas
-> jugadors.txt
+- jugadors.txt
         Formato del fichero: .txt
         Contenido:
               <numero de jugadores>
               <nombre del jugador>/<orden en partida>
-> ranking.bin
+- ranking.bin
         Formato del fichero: .bin
         Contenido:
               <numero de jugadores>
@@ -29,7 +29,7 @@ Funcionalidades
         
         Informacion de cada jugador: - nombre, partidas ganadas, perdidas
  
-> Al comenzar, cada jugador tiene 5 fichas
-> Poner fichas, robar fichas, pasar el turno
+- Al comenzar, cada jugador tiene 5 fichas
+- Poner fichas, robar fichas, pasar el turno
 
 Si un jugador se queda sin fichas, el jugador ha ganado!!
