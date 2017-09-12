@@ -9,15 +9,15 @@ CC	=	gcc -Wall -Wextra -Werror -Iinc
 
 OBJS	=	$(SRCS:.c=.o)
 
-all:		$(OBJS) #calls the objs dependency, converts all .c into .o
-		$(CC) $(OBJS) -o $(EXEC) #gcc ... *.o -o exec_name
+all:		$(OBJS)
+		$(CC) $(OBJS) -o $(EXEC)
 
 clean:
-		rm -f $(OBJS) #rm *.o
+		rm -f $(OBJS)
 
-fclean:		clean #calls the clean rule, rm's all .o files
-		rm -f $(EXEC_NAME) #rm's the executable
+fclean:		clean
+		rm -f $(EXEC)
 
-re:		fclean all #rm's everything and recompiles
+re:		fclean all
 
-.PHONY:		all clean fclean re #PHONY is always needed for security reasons
+.PHONY:		all clean fclean re
