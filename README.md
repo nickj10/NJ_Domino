@@ -13,21 +13,25 @@ Funcionalidades
 - En total hay 28 fichas. Una ficha [5|1] puede considerar como  [1|5]
   No hay fichas repetidas
 - jugadors.txt
-        Formato del fichero: .txt
-        Contenido:
-              <numero de jugadores>
-              <nombre del jugador>/<orden en partida>
+
+  Formato del fichero: .txt
+
+  Contenido:
+       [numero de jugadores]
+       [nombre del jugador]/[orden en partida]
 - ranking.bin
-        Formato del fichero: .bin
-        Contenido:
-              <numero de jugadores>
-              <Jugador 1>
-              <Jugador 2>
-                .
-                .
-              <Jugador n>
-        
-        Informacion de cada jugador: - nombre, partidas ganadas, perdidas
+  
+  Formato del fichero: .bin
+  
+  Contenido:
+       [numero de jugadores]
+       [Jugador 1]
+       [Jugador 2]
+          .
+          .
+       [Jugador n]
+  
+  Informacion de cada jugador: - nombre, partidas ganadas, perdidas
  
 - Al comenzar, cada jugador tiene 5 fichas
 - Poner fichas, robar fichas, pasar el turno
