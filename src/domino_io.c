@@ -13,7 +13,7 @@
 
 void getOpcion (char *opcion) {
 	do {
-		printf ("Bienvenido al LS Domino!\n");
+		printf ("Bienvenido al NJ Domino!\n");
 		printf ("\t1. Nueva partida\n");
 		printf ("\t2. Mostrar ranking\n");
 		printf ("\t3. Salir\n");

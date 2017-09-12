@@ -1,9 +1,9 @@
 all: Practica3
 
-main.o: main.c domino_io.h
+main.o: src/main.c include/domino_io.h
 	gcc main.c -c
 
-domino_io.o: domino_io.c domino_io.h
+domino_io.o: src/domino_io.c include/domino_io.h
 	gcc domino_io.c -c
 
 Practica3: main.o domino_io.o
