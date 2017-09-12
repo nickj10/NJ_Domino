@@ -1,0 +1,18 @@
+--------- Somehow TODO checklist / PLANS--------------
+
+> read players from jugadors.txt --> save to Player **
+
+typedef enum e_bool
+{
+	false,
+	true
+}		bool;		// No need for #define TRUE 1, #define FALSE 0
+
+typedef struct {
+	char *name;
+	int turn;
+} Player;
+
+theory  time!
+if you #define bool int, in memory it will take 4 bytes, as enum only takes 1 byte because it only has 2 elements.
+> createe separate file for 
