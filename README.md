@@ -37,3 +37,35 @@ Funcionalidades
 - Poner fichas, robar fichas, pasar el turno
 
 Si un jugador se queda sin fichas, el jugador ha ganado!!
+
+========================================================================================
+
+English version:
+
+ - To execute the program, we need to pass 2 parameters: ranking.bin and jugadors.txt
+ - The main menu has 2 options: 1 New Game 2 Show ranks 3 Exit
+ - There are 28 dominoes in total. A domino [5|1] can also be considered as [1|5]
+ - jugadors.txt
+
+   File format: .txt
+
+   Contents:
+	[number of players]
+	[player name]/[turn]
+
+- ranking.bin
+
+  File format: .bin
+
+  Contents:
+	[number of players]
+	[Player 1]
+	[Player 2]
+	  .
+	  .
+	[Player n]
+
+  Information of each player: - name, wins, loses
+
+- In the beginning, each player has 5 dominoes
+- The player can put a domino on a table, rob/take a domino from another player or pass
