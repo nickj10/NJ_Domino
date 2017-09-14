@@ -11,6 +11,7 @@ typedef enum e_bool
 typedef struct {
 	char *name;
 	int turn;
+	Game dominoes;
 } Player;
 
 theory  time!
@@ -19,4 +20,34 @@ if you #define bool int, in memory it will take 4 bytes, as enum only takes 1 by
 > createe separate file for logica
 	crearFichas	- creacion de fichas y ordenar en orden random
 	initPlayers	- repartir fichas a cada jugador
-	initBoard	- 
+	
+
+typedef struct {
+	Game deck;
+	Game board;
+	Player ** players;
+} Partida;
+
+Partida partida;
+
+case '1':
+	partida = crearPartida ();
+	
+
+Partida crearPartida () {
+	Partida partida;
+	Ficha deck[MAXDOMINO];
+
+	// first create the dominoes for the deck (ordenar aleatoriamente)
+	crearFichas (deck); //paso por referencia
+	
+	partida.deck = GAME_crea (); // crear la lista del deck
+
+	// initialize players (read from file), assign dominoes
+	initPlayers(partida.players, file_jugadores, partida.deck);
+
+	// initialize board
+	partida.board = GAME_crea ();
+	GAME_inserir (partida.board, GAME_consultar (partida.deck));
+	return partida;		
+} 
