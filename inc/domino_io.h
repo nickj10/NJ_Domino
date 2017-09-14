@@ -5,7 +5,7 @@
 	pantalla
 * @Autor: Nicole Marie Jimenez (n.jimenez.2016)
 * @Fecha creacion: 9/9/17
-* @Fecha ultima modificacion: 9/9/17
+* @Fecha ultima modificacion: 14/9/17
 *
 ********************/
 
@@ -19,6 +19,12 @@
 
 // Constantes
 #define MAXNOM 20
+
+// Tipos propios
+typedef struct {
+	char *name;
+	int turn;
+} Player;
 
 // Prototipos de funciones
 void getOpcion (char *);

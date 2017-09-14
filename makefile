@@ -3,6 +3,8 @@ EXEC	=	nigga
 SRCD	=	src
 
 SRCS	=	$(SRCD)/domino_io.c	\
+		$(SRCD)/logica.c	\
+		$(SRCD)/game.c		\
 		$(SRCD)/main.c
 
 CC	=	gcc -Wall -Wextra -Werror -Iinc

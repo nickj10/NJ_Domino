@@ -43,6 +43,14 @@ int main (int argc, char *argv[]) {
 			// Empezar el juego
 			do {
 				getOpcion(opcion);
+				switch (opcion[0]) {
+					case '1': 
+						break;
+					case '2':
+						break;
+					case '3':
+						printf ("Gracias por jugar!\n");
+				}
 			} while (strcmp (opcion, "3") != 0);		
 		}
 	}
