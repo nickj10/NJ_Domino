@@ -31,7 +31,7 @@ typedef struct {
 } Partida;
 
 // Prototipos
-Partida crearPartida ();
+void crearPartida (Partida *partida);
 void crearFichas (Ficha deck[MAXDOMINO]);
 void initPlayers (Player **players, Game deck);
 
