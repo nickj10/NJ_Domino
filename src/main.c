@@ -47,7 +47,7 @@ int main (int argc, char *argv[]) {
 				getOpcion(opcion);
 				switch (opcion[0]) {
 					case '1':
-						partida = crearPartida ();
+						crearPartida (&partida);
 						break;
 					case '2':
 						break;
