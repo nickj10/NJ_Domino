@@ -7,7 +7,7 @@ SRCS	=	$(SRCD)/domino_io.c	\
 		$(SRCD)/game.c		\
 		$(SRCD)/main.c
 
-CC	=	gcc -Wall -Wextra -Iinc
+CC	=	gcc -Wall -Wextra -Werror -Iinc -fno-stack-protector
 
 OBJS	=	$(SRCS:.c=.o)
 

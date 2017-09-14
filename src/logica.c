@@ -30,9 +30,9 @@ void crearPartida (Partida *partida) {
 	//initPlayers (partida.players, partida.deck);
 
 	// Inicializar el board
-	partida->board = GAME_crea ();
+	//partida->board = GAME_crea ();
 	//GAME_inserir (&partida.board, GAME_consultar (partida.deck));
-
+	//printf ("after?\n");
 }
 
 /*******************
