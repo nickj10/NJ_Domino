@@ -17,24 +17,21 @@
 * @Retorno: Retorna una partida inicializada
 *
 *******************/
-Partida crearPartida () {
-	Partida partida;
+void crearPartida (Partida *partida) {
 	Ficha deck[MAXDOMINO];
 
 	// Crear las fichas y ordenarlas aleatoriamente
 	crearFichas (deck);
 
 	// Crear la lista de las fichas
-	partida.deck = GAME_crea ();
+	partida->deck = GAME_crea ();
 	
 	// Inicializar los jugadores y repartir las fichas
 	//initPlayers (partida.players, partida.deck);
 
 	// Inicializar el board
-	partida.board = GAME_crea ();
+	partida->board = GAME_crea ();
 	//GAME_inserir (&partida.board, GAME_consultar (partida.deck));
-
-	return partida;
 
 }
 
