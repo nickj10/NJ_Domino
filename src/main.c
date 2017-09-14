@@ -8,6 +8,7 @@
 ********************/
 
 #include "domino_io.h"
+#include "logica.h"
 
 int main (int argc, char *argv[]) {
 	int i = 0;
@@ -16,6 +17,7 @@ int main (int argc, char *argv[]) {
 	FILE *file_ranking;
 	FILE *file_jugadors;
 	char *opcion = (char *) malloc (sizeof(char) * MAXNOM);
+	Partida partida;
 	
 	// Coger los nombres de los ficheros en los parametros
 	while (i < argc) {
@@ -44,7 +46,8 @@ int main (int argc, char *argv[]) {
 			do {
 				getOpcion(opcion);
 				switch (opcion[0]) {
-					case '1': 
+					case '1':
+						partida = crearPartida ();
 						break;
 					case '2':
 						break;

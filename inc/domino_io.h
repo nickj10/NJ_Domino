@@ -20,12 +20,6 @@
 // Constantes
 #define MAXNOM 20
 
-// Tipos propios
-typedef struct {
-	char *name;
-	int turn;
-} Player;
-
 // Prototipos de funciones
 void getOpcion (char *);
 

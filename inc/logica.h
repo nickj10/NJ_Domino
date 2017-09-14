@@ -11,7 +11,28 @@
 #ifndef _LOGICA_H
 #define _LOGICA_H
 
-// Prototipos
+#define MAXDOMINO 28
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "game.h"
+
+typedef struct {
+	char *name;
+	int turn;
+	Game dominoes;
+} Player;
+
+typedef struct {
+	Game deck;
+	Game board;
+	Player ** players;
+} Partida;
+
+// Prototipos
+Partida crearPartida ();
+void crearFichas (Ficha deck[MAXDOMINO]);
+void initPlayers (Player **players, Game deck);
 
 #endif
