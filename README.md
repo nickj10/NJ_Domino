@@ -69,3 +69,9 @@ English version:
 
 - In the beginning, each player has 5 dominoes
 - The player can put a domino on a table, rob/take a domino from another player or pass
+
+==========================================================================================
+
+Run
+
+	./nigga jugadors.txt ranking.bin
