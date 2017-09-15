@@ -30,6 +30,11 @@ To summarize what Git is, it is used to connect to github, where the project is.
 
 III. Contribute to the project
 
+Set username and email for Git:
+
+	git config --global user.name [username]
+	git config --global user.email [email]
+
 You need to clone the project to be able to work on it locally:
 
 	git clone https://github.com/nickj10/NJ_Domino.git
