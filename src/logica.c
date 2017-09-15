@@ -4,7 +4,7 @@
 *	de toda la logica y funcionamiento del juego en si.
 * @Autor: Nicole Marie Jimenez (n.jimenez.2016)
 * @Fecha creacion: 14/9/17
-* @Fecha ultima modificacion: 14/9/17
+* @Fecha ultima modificacion: 15/9/17
 *
 ********************/
 
@@ -44,17 +44,44 @@ void crearPartida (Partida *partida) {
 *******************/
 void crearFichas (Ficha deck[MAXDOMINO]) {
 	int i = 0, j, k;
-	while (i < MAXDOMINO) {
-		for (j = 0; j <= 6; j++) {
-			for (k = j; k <= 6; k++) {
-				deck[i].num2 = k;
-				deck[i].num1 = j;
-				i++;
-			}
+	for (j = 0; j <= 6; j++) {
+		for (k = j; k <= 6; k++) {
+			deck[i].num2 = k;
+			deck[i].num1 = j;
+			i++;
 		}
 	}
 	
+	// Ordenarlas aleatoriamente
+	shuffleFichas (deck, MAXDOMINO);
+
 	for (i = 0; i < MAXDOMINO; i++) {
 		printf ("[%d|%d] ", deck[i].num1, deck[i].num2);
 	}
+}
+
+/*******************
+*
+* @Finalidad: Ordenar las fichas aleatoriamente
+* @Parametros:	deck = un array de tipo Ficha, tamano maximo de 28
+* @Retorno: No retorna nada
+*
+*******************/
+void shuffleFichas (Ficha deck[MAXDOMINO], int max) {
+	int i, j;
+	Ficha temp;
+	
+	srand (time(NULL));
+	if (max > 1) {
+		for (i = 0; i < max - 1; i++) {
+			// Elegir aleatoriamente un numero de casilla
+			j = (i + rand()) % MAXDOMINO;
+		
+			// Hacer un intercambio con esa casilla
+			temp = deck[j];
+			deck[j] = deck[i];
+			deck[i] = temp;
+		}
+	}
+
 }
