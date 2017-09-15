@@ -28,13 +28,13 @@ typedef struct {
 typedef struct {
 	Game deck;
 	Game board;
-	Player ** players;
+	Player *players;
 } Partida;
 
 // Prototipos
 void crearPartida (Partida *partida);
 void crearFichas (Ficha deck[MAXDOMINO]);
-void initPlayers (Player **players, Game deck);
+void initPlayers (Player **players, Game *deck);
 void shuffleFichas (Ficha deck[MAXDOMINO], int max);
 
 #endif

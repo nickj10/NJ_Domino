@@ -29,8 +29,9 @@ void crearPartida (Partida *partida) {
 	for (i= 0; i < MAXDOMINO; i++) {
 		GAME_inserir (&partida->deck, deck[i]);
 	}	
+
 	// Inicializar los jugadores y repartir las fichas
-	//initPlayers (partida.players, partida.deck);
+//	initPlayers (&partida->players, partida->deck);
 
 	// Inicializar el board
 	//partida->board = GAME_crea ();
@@ -85,3 +86,21 @@ void shuffleFichas (Ficha deck[MAXDOMINO], int max) {
 	}
 
 }
+
+/*******************
+*
+* @Finalidad: Inicializar los jugadores y repartir las fichas a cada 
+*	jugador
+* @Parametros:	players = un array dinamica de tipo Player que contiene la
+*			informacion de cada jugador
+*		deck = las fichas que vamos a repartir a los jugadores
+*		Los parametros se pasan por referencia porque se modifican
+*		dentro de la funcion
+* @Retorno: No retorna nada
+*
+*******************/
+//void initPlayers (Player **players, Game *deck) {
+	
+	// Repartir las fichas a cada jugador
+	
+//}
