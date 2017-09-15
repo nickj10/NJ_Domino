@@ -1,6 +1,6 @@
-EXEC	=	nigga	#nombre del ejecutable
+EXEC	=	nigga	
 
-SRCD	=	src	#donde se encuentran los ficheros .c
+SRCD	=	src
 
 SRCS	=	$(SRCD)/domino_io.c	\
 		$(SRCD)/logica.c	\
@@ -8,20 +8,20 @@ SRCS	=	$(SRCD)/domino_io.c	\
 		$(SRCD)/main.c
 
 CC	=	gcc -Wall -Wextra -Werror -Iinc 2> errorlog.txt
-		#-Werror nos da error si hay alguna variable no inicializada
-		# 2> errorlog.txt escribe los errores en un fichero aunque
-		# no esten visibles en el terminal 
 
-OBJS	=	$(SRCS:.c=.o)	#crea los .o a partir de los .c
+
+
+
+OBJS	=	$(SRCS:.c=.o)
 
 all:		$(OBJS)
 		$(CC) $(OBJS) -o $(EXEC)
 clean:
-		rm -f $(OBJS)	#suprime los ficheros .o
+		rm -f $(OBJS)
 
 fclean:		clean
-		rm -f $(EXEC)	# suprime el ejecutable
+		rm -f $(EXEC)
 
-re:		fclean all	# suprime los .o/.exe y lo compila de nuevo
+re:		fclean all
 
 .PHONY:		all clean fclean re
