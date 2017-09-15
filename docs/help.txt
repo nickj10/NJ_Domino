@@ -1,0 +1,83 @@
+============================================================================
+Requirements:
+	- Github account
+	- Git
+
+If this is your first time using Git, follow the instructions below
+
+I. VirtualBox Installations
+
+It is easier if you know how to work in a Linux environment. If you wish to
+work on a Linux environment but doesnt want to completely use Linux for everyday
+use, please install VirtualBox or any other software that lets you run Linux
+alongside your current OS.
+
+For Mac users: https://www.virtualbox.org/wiki/Mac%20OS%20X%20build%20instructions
+For Windows users: https://www.virtualbox.org/wiki/Downloads
+
+You can use any Distro you want: Ubuntu, Debian, Fedora, OpenSUSE, Linux Mint,
+Manjaro Linux, Gentoo, etc.
+
+II. Git Installation
+
+Depends on what kind of environment you work on. I am not going to create an 
+installation guide for Git because there are lots of reliable websites for that.
+Here is one:
+
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git 
+
+To summarize what Git is, it is used to connect to github, where the project is.
+
+III. Contribute to the project
+
+You need to clone the project to be able to work on it locally:
+
+	git clone https://github.com/nickj10/NJ_Domino.git
+	
+After cloning:
+ALWAYS create your own branch and do not merge directly to main branch.
+
+	git branch [branch_name]
+
+To go to your branch:
+	
+	git checkout [branch_name]
+
+	git push --set-upstream origin [branch_name]
+
+If there are files in the project that are not on your local directory,
+it will not allow you to push. First, you have to pull the files and then
+push & commit:
+
+	git pull
+
+It is BETTER to merge MASTER branch to your branch first to see if it is
+compatible to what we already have in the master branch.
+
+	git checkout [branch_name]
+	git merge --no-ff master
+
+When you want to commit (add files to the project through your branch first),
+you add the following commands.
+NOTE: Do not push if you are "detached from HEAD"
+
+	git add -A
+	git commit -am "add_commit_message"
+	git push
+
+And now if everything is okay, merge to master branch:
+
+	git checkout master
+	git merge --no-ff [branch_name] 
+
+For other information or questions, feel free to contact me.
+
+Official Git Tutorial:
+https://git-scm.com/docs/gittutorial
+============================================================================
+
+
+
+
+
+
