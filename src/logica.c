@@ -44,7 +44,7 @@ void crearPartida (Partida *partida) {
 *******************/
 void crearFichas (Ficha deck[MAXDOMINO]) {
 	int i = 0, j, k;
-	while (i <= MAXDOMINO) {
+	while (i < MAXDOMINO) {
 		for (j = 0; j <= 6; j++) {
 			for (k = j; k <= 6; k++) {
 				deck[i].num2 = k;
