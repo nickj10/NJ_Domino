@@ -81,7 +81,17 @@ Official Git Tutorial:
 https://git-scm.com/docs/gittutorial
 ============================================================================
 
+How to compile:
 
+	make
+
+How to delete *.o and executable file:
+
+	make fclean
+
+How to run after compiling:
+
+	./nigga jugadors.txt ranking.bin
 
 
 

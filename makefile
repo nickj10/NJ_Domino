@@ -7,7 +7,7 @@ SRCS	=	$(SRCD)/domino_io.c	\
 		$(SRCD)/game.c		\
 		$(SRCD)/main.c
 
-CC	=	gcc -Wall -Wextra -Werror -Iinc 2> errorlog.txt
+CC	=	gcc -Wall -Wextra -Werror -Iinc
 
 
 

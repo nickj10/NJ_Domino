@@ -19,13 +19,16 @@
 *******************/
 void crearPartida (Partida *partida) {
 	Ficha deck[MAXDOMINO];
+	int i;
 
 	// Crear las fichas y ordenarlas aleatoriamente
 	crearFichas (deck);
 
 	// Crear la lista de las fichas
 	partida->deck = GAME_crea ();
-	
+	for (i= 0; i < MAXDOMINO; i++) {
+		GAME_inserir (&partida->deck, deck[i]);
+	}	
 	// Inicializar los jugadores y repartir las fichas
 	//initPlayers (partida.players, partida.deck);
 
@@ -55,9 +58,6 @@ void crearFichas (Ficha deck[MAXDOMINO]) {
 	// Ordenarlas aleatoriamente
 	shuffleFichas (deck, MAXDOMINO);
 
-	for (i = 0; i < MAXDOMINO; i++) {
-		printf ("[%d|%d] ", deck[i].num1, deck[i].num2);
-	}
 }
 
 /*******************
