@@ -3,7 +3,7 @@
 * @Proposito: Funcion principal del juego
 * @Autor: Nicole Marie Jimenez (n.jimenez.2016)
 * @Fecha creacion: 9/9/17
-* @Fecha ultima modificacion: 9/9/17
+* @Fecha ultima modificacion: 16/9/17
 *
 ********************/
 
@@ -19,10 +19,13 @@ int main (int argc, char *argv[]) {
 	char *opcion = (char *) malloc (sizeof(char) * MAXNOM);
 	Partida partida;
 	Ficha aux;
+	int hayRanks = 0;
+	
 	
 	// Coger los nombres de los ficheros en los parametros
 	while (i < argc) {
 		if (strcmp(argv[i], "ranking.bin") == 0) {
+			hayRanks++;
 			strcpy(f_ranks, argv[i]);
 		}
 		if (strcmp(argv[i], "jugadors.txt") == 0) {
@@ -31,8 +34,13 @@ int main (int argc, char *argv[]) {
 		i++;
 	}
 	
+	if (!hayRanks) {
+		strcpy (f_ranks, "ranking.bin");	// Se asigna el nombre del fichero
+	}
+		
+	printf ("%s \n", f_ranks);
+	
 	// Comprobar si los ficheros existen
-	file_jugadors = fopen(f_jugadors, "r");
 	if (file_jugadors == NULL) {
 		printf ("No existe el fichero de los jugadores.\n");
 	}
