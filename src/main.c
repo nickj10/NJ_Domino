@@ -18,9 +18,8 @@ int main (int argc, char *argv[]) {
 	FILE *file_jugadors;
 	char *opcion = (char *) malloc (sizeof(char) * MAXNOM);
 	Partida partida;
-	Ficha aux;
 	int hayRanks = 0;
-	
+	//int numJugadores;
 	
 	// Coger los nombres de los ficheros en los parametros
 	while (i < argc) {
@@ -41,11 +40,12 @@ int main (int argc, char *argv[]) {
 	printf ("%s \n", f_ranks);
 	
 	// Comprobar si los ficheros existen
+	file_jugadors = fopen (f_jugadors, "r");
 	if (file_jugadors == NULL) {
 		printf ("No existe el fichero de los jugadores.\n");
 	}
 	else {
-		file_ranking = fopen(f_ranks, "ab+");
+		file_ranking = fopen (f_ranks, "ab+");
 		if (file_ranking == NULL) {
 			printf ("No existe el fichero del ranking.\n");
 			printf ("Se creara un nuevo fichero ranking.bin\n");
@@ -55,14 +55,24 @@ int main (int argc, char *argv[]) {
 			do {
 				getOpcion(opcion);
 				switch (opcion[0]) {
-					case '1':	
+					case '1':
+						initPlayers (&partida.players, file_jugadors);	
 						crearPartida (&partida);
 						GAME_irInicio (&partida.deck);
+						
+						/****DEBUG FICHAS*****
 						while (!GAME_final (partida.deck)) {
 							aux = GAME_consultar (partida.deck);
 							printf ("[%d|%d] ", aux.num1, aux.num2);
 							GAME_avanzar (&partida.deck);
 						}
+						*********************/
+						
+						/****DEBUG PLAYERS****
+						for (int index = 0; index < numJugadores; index++) {
+							printf ("%s - %d \n", partida.players[index].name, partida.players[index].turn);
+						}
+						*********************/
 						break;
 					case '2':
 						break;

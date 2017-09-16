@@ -4,7 +4,7 @@
 *	de toda la logica y funcionamiento del juego en si.
 * @Autor: Nicole Marie Jimenez (n.jimenez.2016)
 * @Fecha creacion: 14/9/17
-* @Fecha ultima modificacion: 15/9/17
+* @Fecha ultima modificacion: 16/9/17
 *
 ********************/
 
@@ -29,9 +29,6 @@ void crearPartida (Partida *partida) {
 	for (i= 0; i < MAXDOMINO; i++) {
 		GAME_inserir (&partida->deck, deck[i]);
 	}	
-
-	// Inicializar los jugadores y repartir las fichas
-//	initPlayers (&partida->players, partida->deck);
 
 	// Inicializar el board
 	//partida->board = GAME_crea ();
@@ -93,14 +90,26 @@ void shuffleFichas (Ficha deck[MAXDOMINO], int max) {
 *	jugador
 * @Parametros:	players = un array dinamica de tipo Player que contiene la
 *			informacion de cada jugador
-*		deck = las fichas que vamos a repartir a los jugadores
-*		Los parametros se pasan por referencia porque se modifican
-*		dentro de la funcion
+*		file_jugadors = fichero de texto que contiene la informacion
+*			de los jugadores
 * @Retorno: No retorna nada
 *
 *******************/
-//void initPlayers (Player **players, Game *deck) {
+void initPlayers (Player **players, FILE *file_jugadors) {
+	int numJugadores, i = 0;
+	char aux;
 	
-	// Repartir las fichas a cada jugador
-	
-//}
+	// Como ya esta abierto el fichero, no hace falta hacer un fopen
+	if (file_jugadors == NULL)
+		printf ("no se encuentra");
+	fscanf (file_jugadors,"%d", &numJugadores);
+	printf ("num jug: %d \n", numJugadores);
+	while (i < numJugadores) {
+		fscanf (file_jugadors, "%s", players[i]->name);
+		fscanf (file_jugadors, "%c", &aux);	
+		fscanf (file_jugadors, "%d", &players[i]->turn);
+		printf ("%s \n", players[i]->name);
+		i++;
+	}
+	//return numJugadores;
+}

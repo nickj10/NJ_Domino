@@ -50,4 +50,6 @@ Partida crearPartida () {
 	partida.board = GAME_crea ();
 	GAME_inserir (partida.board, GAME_consultar (partida.deck));
 	return partida;		
-} 
+}
+
+ 
