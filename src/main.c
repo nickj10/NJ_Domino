@@ -19,7 +19,7 @@ int main (int argc, char *argv[]) {
 	char *opcion = (char *) malloc (sizeof(char) * MAXNOM);
 	Partida partida;
 	int hayRanks = 0;
-	//int numJugadores;
+	int numJugadores = 0;
 	
 	// Coger los nombres de los ficheros en los parametros
 	while (i < argc) {
@@ -56,10 +56,11 @@ int main (int argc, char *argv[]) {
 				getOpcion(opcion);
 				switch (opcion[0]) {
 					case '1':
-						initPlayers (&partida.players, file_jugadors);	
+						numJugadores = initPlayers (&partida.players, file_jugadors);	
 						crearPartida (&partida);
 						GAME_irInicio (&partida.deck);
 						
+						printf ("numJug: %d\n", numJugadores);
 						/****DEBUG FICHAS*****
 						while (!GAME_final (partida.deck)) {
 							aux = GAME_consultar (partida.deck);

@@ -4,7 +4,7 @@
 *	de toda la logica y funcionamiento del juego en si.
 * @Autor: Nicole Marie Jimenez (n.jimenez.2016)
 * @Fecha creacion: 14/9/17
-* @Fecha ultima modificacion: 16/9/17
+* @Fecha ultima modificacion: 28/9/17
 *
 ********************/
 
@@ -95,21 +95,29 @@ void shuffleFichas (Ficha deck[MAXDOMINO], int max) {
 * @Retorno: No retorna nada
 *
 *******************/
-void initPlayers (Player **players, FILE *file_jugadors) {
+int initPlayers (Player **players, FILE *file_jugadors) {
 	int numJugadores, i = 0;
-	char aux;
-	
+	char aux[MAXNOMBRE];
+	char *aux2 = (char *) malloc (sizeof(char));
 	// Como ya esta abierto el fichero, no hace falta hacer un fopen
 	if (file_jugadors == NULL)
 		printf ("no se encuentra");
 	fscanf (file_jugadors,"%d", &numJugadores);
 	printf ("num jug: %d \n", numJugadores);
+	*players = (Player *) malloc (sizeof(Player) * numJugadores);
 	while (i < numJugadores) {
-		fscanf (file_jugadors, "%s", players[i]->name);
-		fscanf (file_jugadors, "%c", &aux);	
-		fscanf (file_jugadors, "%d", &players[i]->turn);
-		printf ("%s \n", players[i]->name);
+		// Pedir memoria para el nombre del jugador
+		players[i]->name = (char *) malloc (sizeof(char) * MAXNOMBRE);
+		// Coger toda la linia y separarlo
+		fgets (aux, MAXNOMBRE, file_jugadors);
+		aux2 = strtok (aux, "/");
+		players[i]->name = aux2;
+		aux2 = strtok (aux, " ");
+		players[i]->turn = atoi(aux2);
+
+		printf ("name %d: %s \n", i+1, players[i]->name);
+		printf ("turn: %d\n", players[i]->turn);
 		i++;
 	}
-	//return numJugadores;
+	return numJugadores;
 }
