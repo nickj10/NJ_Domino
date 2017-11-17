@@ -96,28 +96,39 @@ void shuffleFichas (Ficha deck[MAXDOMINO], int max) {
 *
 *******************/
 int initPlayers (Player **players, FILE *file_jugadors) {
-	int numJugadores, i = 0;
+	int numJugadores, i;
 	char aux[MAXNOMBRE];
 	char *aux2 = (char *) malloc (sizeof(char));
 	// Como ya esta abierto el fichero, no hace falta hacer un fopen
-	if (file_jugadors == NULL)
-		printf ("no se encuentra");
-	fscanf (file_jugadors,"%d", &numJugadores);
-	printf ("num jug: %d \n", numJugadores);
-	*players = (Player *) malloc (sizeof(Player) * numJugadores);
-	while (i < numJugadores) {
-		// Pedir memoria para el nombre del jugador
-		players[i]->name = (char *) malloc (sizeof(char) * MAXNOMBRE);
-		// Coger toda la linia y separarlo
-		fgets (aux, MAXNOMBRE, file_jugadors);
-		aux2 = strtok (aux, "/");
-		players[i]->name = aux2;
-		aux2 = strtok (aux, " ");
-		players[i]->turn = atoi(aux2);
-
-		printf ("name %d: %s \n", i+1, players[i]->name);
-		printf ("turn: %d\n", players[i]->turn);
-		i++;
+	if (file_jugadors == NULL) {
+		printf ("No se encuentra el fichero de jugadores");
+		return 0;
 	}
-	return numJugadores;
+	else {
+		fscanf (file_jugadors,"%d", &numJugadores);
+		*players = (Player *) malloc (sizeof(Player) * numJugadores);
+		if (!(*players)) {
+			printf ("No se ha podido guardar espacio para los jugadores.\n");
+		} else {
+			for (i = 0; i < numJugadores; i++) {
+				// Pedir memoria para el nombre del jugador
+				players[i]->name = (char *) malloc (sizeof(char) * MAXNOMBRE);
+				if (!(players[i]->name)) {
+					printf ("Error, no hay memoria para el nombre\n");
+				} else {
+					// Coger toda la linia y separarlo
+					fscanf (file_jugadors, "%s", aux);
+					aux2 = strtok (aux, "/");
+					players[i]->name = aux2;
+					aux2 = strtok (NULL, "\n");
+					players[i]->turn = atoi(aux2);
+
+					printf ("name %d: %s \n", i+1, players[i]->name);
+					printf ("turn: %d\n", players[i]->turn);
+				}	
+			}
+			
+		}
+		return numJugadores;
+	}
 }
